@@ -1,3 +1,22 @@
+# DEPENDENCIAS PRINCIPALES
+Tener en cuenta que los modulos de node no estan cargados, realizar un `npm install` dentro del directorio del proyecto antes de realizar un `ng serve` y arrancar tanto backend como frond end.
+
+# DESARROLLADOR 
+Gutiérrez R. José - 1600505505 (gutiecuador@gmail.com)
+
+# CARACTERISTICAS 
+-FrondEnd Bajo Angular 6+, recupera informacion desde la base de datos de mongodb.
+-Permite crear nuevos registros en base de datos
+-Recupera y crea los markers guardados en la db.
+
+# FUNCIONES POR DESARROLLAR 
+- Boton de ubicacion para obtener las coordenadas del usuario.
+- Login de usuarios.
+- Filtros de seleccion de eventos.
+
+# COMENTARIOS DEL EVENTO
+- Gracias por la invitacion, para la proxima intentar trabajar en grupos segun la tecnologia a usar de frond o back end.
+
 # Myapp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.5.
