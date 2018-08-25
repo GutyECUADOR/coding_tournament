@@ -1,0 +1,62 @@
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map 
+  [zoom]="map_zoom"
+  [latitude]="start_map_lan" 
+  [longitude]="start_map_lng" 
+  (mapClick)="onChooseLocation($event)" >
+    <agm-marker *ngIf="confirmMarket"
+      [latitude]="lat_marker" 
+      [longitude]="lng_marker">
+    </agm-marker>
+
+    <agm-marker *ngFor="let marker of markers"
+    [latitude]="marker.latitud" 
+    [longitude]="marker.longitud">
+    </agm-marker>
+
+    <agm-marker
+      [latitude]="-0.1773207" 
+      [longitude]="-78.4856441">
+    </agm-marker>
+
+</agm-map>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" [hidden]="true" data-toggle="modal" id="openModalButton" data-target="#exampleModal">
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Nuevo suceso</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #formSuceso="ngForm">
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Que tipo de evento es?</label>
+            <select class="form-control" [(ngModel)]="evento.codigo" name="selectTipo">
+              <option value="ASA">Asalto</option>
+              <option value="ROB">Robo</option>
+              
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label>Danos una pequeña descripcion</label>
+            <textarea class="form-control" [(ngModel)]="evento.descripcion" name="descripcion" rows="3"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary" (click)="saveEvento()">Registrar</button>
+      </div>
+    </div>
+  </div>
+</div>
